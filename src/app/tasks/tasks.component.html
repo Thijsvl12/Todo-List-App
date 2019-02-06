@@ -1,0 +1,17 @@
+<mat-list style="width:40vw" class="d-flex justify-content-center flex-column align-items-center">
+  <div class="d-flex justify-content-center w-100">
+      <mat-card-title class="text-center">Todo List</mat-card-title>
+  </div>
+  <div>
+      <mat-form-field>
+        <input [(ngModel)]="sTitle" matInput matInput placeholder="Title">
+      </mat-form-field>
+      <button mat-flat-button color="primary" (click)="on_aTask()">Add</button>
+  </div>
+  <mat-card *ngFor="let task of tasks" class="d-flex justify-content-between" style="width:80%">
+    <mat-card-content>
+      {{task.title}}
+    </mat-card-content>
+    <button mat-flat-button color="warn" class="w-20" style="padding: 0px" (click)="on_dTask(task.id)">X</button>
+  </mat-card>
+</mat-list>
